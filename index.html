@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+    <title>Login</title>
+</head>
+
+<body>
+
+    <form id="my_captcha_form" action="other.html">
+        <div id="recaptcha" class="g-recaptcha" data-sitekey='key' data-callback="callback"></div>
+        <br />
+        <input id="submit-button" type="submit" value="Submit" disabled>
+    </form>
+
+
+
+    <script>
+        const claveWeb = '6Lc_EHQhAAAAAN6oWueenJp0IePl0ljOg07gfROs'
+
+        document.getElementById('recaptcha').setAttribute('data-sitekey', claveWeb);
+
+        function callback() {
+            const submitButton = document.getElementById("submit-button");
+            submitButton.removeAttribute("disabled");
+        }
+
+        // document.getElementById("my_captcha_form").addEventListener("submit", function (evt) {
+
+        //     var response = grecaptcha.getResponse();
+        //     if (response.length == 0) {
+        //         //reCaptcha not verified
+        //         alert("Por favor, verifique que es un humano");
+        //         evt.preventDefault();
+        //         return false;
+        //     }
+        //     //captcha verified
+        //     //do the rest of your validations here
+        //     document.getElementById('submit-button').removeAttribute('disabled');
+        //     evt.submitter()
+        //     return true;
+        // });
+
+    </script>
+</body>
+
+</html>
